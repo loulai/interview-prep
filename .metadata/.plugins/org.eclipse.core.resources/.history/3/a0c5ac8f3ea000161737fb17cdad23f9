@@ -1,0 +1,30 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Iterator;
+import java.util.Set;
+
+// http://beginnersbook.com/2013/12/hashmap-in-java-with-example/
+
+public class MAin {
+
+	public static void main(String[] args) {
+		
+		String[] a = {"c", "d", "e"};
+		String[] b = {"a", "b", "c"};
+		
+		//declaration
+		HashMap<String, Integer> aMap = new HashMap<String, Integer>();
+		
+		//adding elements
+		aMap.put("c", 1);
+		aMap.put("d", 1);
+		aMap.put("e", 1);
+		
+		//display using Iterator
+		Set set = aMap.entrySet();
+		
+		
+
+	}
+
+}

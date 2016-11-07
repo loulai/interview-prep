@@ -1,0 +1,38 @@
+
+Runtime Analysis for Part 2: Checking if List if Recursive
+=================
+
+Runtime is dependent on long the linked list is. 
+For example, if there were 4 nodes and the list was recursive, the method's while loop will run 4 times.
+If there were 3 nodes, it runs 3 times.
+
+Thus, in the situation of recursive lists, the running time for the algorithm is just n.
+
+The runtime for a non-recursive list is shorter.
+If there were 6 nodes, the while loop will run only 2 times because the while loop only runs if the next two nodes do not point to null.
+If there were 5 nodes, the while loop runs also only twice for the same reason.
+If there were 4 nodes, the while loop runs only once, similarly because after one iteration the condition of the next two nodes not
+pointing to null no longer holds true.
+If there were 3 nodes, the while loops runs one too. 
+The while loop never runs if there are two or less nodes, because the second node already points to null so the condition for the
+while loop is false.
+
+Thus, to be really picky, in the situation of non-recursive lists, the runtime is (n-1)/2. 
+But in reality, the runtime will just evaluate to n, because the coefficients are so small to be irrelevant.
+
+
+Runtime Analysis for Part 3: Max-Stack
+=================
+
+SlowMaxStack
+---
+Runtime: n
+Because getMaxSoFar() goes through the entire list to find the max.
+
+FastMaxStack
+---
+Runtime: O(1)
+Because pop(), push() and getMaxSoFar() are independent of the number of items in the list.
+It only does one thing (either insert or remove from stack), and doesn't go through the entire list like SlowMaxStack.
+
+

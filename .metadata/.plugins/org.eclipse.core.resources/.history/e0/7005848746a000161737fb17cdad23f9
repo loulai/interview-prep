@@ -1,0 +1,49 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Iterator;
+import java.util.Set;
+
+// http://beginnersbook.com/2013/12/hashmap-in-java-with-example/
+
+public class MAin {
+
+	public static void main(String[] args) {
+		
+		String[] a = "cde".split("");
+		String[] b = {"a", "b", "c"};
+		
+		HashMap aMap = makeHashMap(a);
+	
+		//counting elements and adding
+		for(int i = 0; i < a.length(); i++){
+			aMap.put(a[i] , aMap.get(a[i]) + 1);
+		}
+		
+		//display using Iterator
+		Set set = aMap.entrySet();
+		Iterator iterator = set.iterator();
+		
+		while(iterator.hasNext()){
+			Map.Entry mentry = (Map.Entry)iterator.next();
+			System.out.print("Key: " + mentry.getKey() + " Value: ");
+			System.out.println(mentry.getValue());
+		}
+		
+	}
+	
+	public static HashMap makeHashMap(String[] arr){
+		
+		//declaration
+		HashMap<String, Integer> xMap = new HashMap<String, Integer>();
+		
+		//initializing keys
+		for(int i = 0; i < arr.length; i++){
+			if(!xMap.containsKey(arr[i])){
+				xMap.put(arr[i] , 0);
+			}
+		}
+		
+		return xMap;
+	}
+
+}
